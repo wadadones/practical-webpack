@@ -21,6 +21,15 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.scss$/,
+        include: path.resolve(__dirname, 'src/scss'),
+        use: [
+          'style-loader', // HTMLにstyleタグを追加する(headに追加される)
+          'css-loader',   // cssをモジュールに変換
+          'sass-loader'   // sassをcssに変換
+        ]
       }
     ]
   }
