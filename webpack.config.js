@@ -35,7 +35,16 @@ module.exports = {
         // src/imagesの中にあるpng, jpg, gifは, url-loaderを使って変換してください
         test: /\.(png|jpg|gif)$/i,
         include: path.resolve(__dirname, 'src/images'),
-        loader: 'url-loader'
+        loader: 'url-loader',
+        options: {
+          // 8KB以上だったらDataUrlに変換せずに出力する
+          limit: 8192,
+          // DataUrlに変換しない場合の変換後の名前を決める
+          name: '[name].[ext]',
+          // 変換しない場合の画像の出力先
+          outputPath: '../images/',
+          publicPath: path => './images/' + path
+        }
       }
     ]
   }
