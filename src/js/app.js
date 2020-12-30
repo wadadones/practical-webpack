@@ -1,4 +1,4 @@
-import $ from 'jquery'; // ./node_modules/jquery/dist/jquery.js が読み込まれているわね！
+// import $ from 'jquery'; // ./node_modules/jquery/dist/jquery.js が読み込まれているわね！
 import add from './modules/add'; // export const add = (n1, n2) => n1 + n2;
 import tax from './modules/tax';
 
