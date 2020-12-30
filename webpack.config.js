@@ -5,9 +5,12 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
   mode: 'development',
-  entry: './src/js/app.js', // どのファイルを読み始めるかを定義。ここにrequireが書いてあればそこからさらに読み込みを行う
-  output: { // 生成されたjsのファイル名と出力場所が定義されている
-    filename: 'bundle.js',
+  entry: { // どのファイルを読み始めるかを定義。ここにrequireが書いてあればそこからさらに読み込みを行う
+    app: './src/js/app.js',
+    search: './src/js/search.js'
+  },
+  output: { // 生成されたjsのファイル名と出力場所が定義されている。[name]はエントリの項目名に対応
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'public/js')
   },
   module: {
