@@ -11,7 +11,8 @@ module.exports = {
   },
   output: { // 生成されたjsのファイル名と出力場所が定義されている。[name]はエントリの項目名に対応
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'public/js')
+    path: path.resolve(__dirname, 'public/js'),
+    publicPath: '/js/' // ブラウザから、出力したファイルにアクセスするときのpath
   },
   module: {
     rules: [
@@ -59,5 +60,11 @@ module.exports = {
       $: 'jquery'
     }),
     new BundleAnalyzerPlugin()
-  ]
+  ],
+  devServer: {
+    open: true, // サーバー起動時にブラウザを自動起動
+    port: 9000,
+    contentBase: './public' // ブラウザ起動時にどこがひらかれるか
+  }
+
 }
