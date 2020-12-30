@@ -30,6 +30,12 @@ module.exports = {
           'css-loader',   // cssをモジュールに変換
           'sass-loader'   // sassをcssに変換
         ]
+      },
+      {
+        // src/imagesの中にあるpng, jpg, gifは, url-loaderを使って変換してください
+        test: /\.(png|jpg|gif)$/i,
+        include: path.resolve(__dirname, 'src/images'),
+        loader: 'url-loader'
       }
     ]
   }
