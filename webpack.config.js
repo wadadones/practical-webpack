@@ -65,6 +65,6 @@ module.exports = {
     open: true, // サーバー起動時にブラウザを自動起動
     port: 9000,
     contentBase: './public' // ブラウザ起動時にどこがひらかれるか
-  }
-
+  },
+  devtool: 'eval-cheap-module-source-map'
 }
